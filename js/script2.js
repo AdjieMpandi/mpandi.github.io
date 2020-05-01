@@ -1,4 +1,4 @@
-function tampilkanSemuaMenu() {
+function tampilkan() {
 
 	// $.ajax({
 	// 	url : 'https://corona.ntbprov.go.id/api/data',
@@ -9,52 +9,85 @@ function tampilkanSemuaMenu() {
 
 	// $.getJSON('data/pizza.json', function(data) {
 	$.getJSON('https://corona.ntbprov.go.id/api/data', function(data) {
-		let menu = data.data.kota_bima.dirawat;
-		// let menu = data.menu;
 
-		// $.each(menu, function(i, data) {
-			// let harga = data.harga
-			// var	reverse = harga.toString().split('').reverse().join(''),
-			// 	ribuan 	= reverse.match(/\d{1,3}/g);
-			// 	ribuan	= ribuan.join('.').split('').reverse().join('');
+		var bulan = ['','Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']; 
+		let update_terakhir = data.update_terakhir;
+  		let tahun = update_terakhir.substr(0, 4);
+  		let _bulan = update_terakhir.substr(6, 1);
+  		let tanggal = update_terakhir.substr(8, 2);
+  		let jam = update_terakhir.substr(11, 5);
+  		var bulan = bulan[_bulan];
 
-			// $('#daftar-menu').append('<div class="col-md-4"><div class="card mb-4"><img src="img/menu/' + data.gambar + '" class="card-img-top"><div class="card-body"><h5 class="card-title">' + data.nama + '</h5><p class="card-text">' + data.deskripsi + '</p><h5 class="card-title">Rp. ' + ribuan + '</h5><a href="#" class="btn btn-primary">Pesan Sekarang</a></div></div></div>');
-		console.log(menu);
-		});
+		// Kota Bima
+		let kota_bima = data.data.kota_bima;
+		let dirawat = kota_bima.dirawat;
+		let sembuh = kota_bima.sembuh;
+		let meninggal = kota_bima.meninggal;
+		let odp = kota_bima.masih_odp;
+		let pdp = kota_bima.masih_pdp;
+		let positif = kota_bima.sembuh + kota_bima.dirawat;
+
+		// Kabupaten Bima
+		let kabupaten_bima = data.data.kabupaten_bima;
+		let kab_dirawat = kabupaten_bima.dirawat;
+		let kab_sembuh = kabupaten_bima.sembuh;
+		let kab_meninggal = kabupaten_bima.meninggal;
+		let kab_odp = kabupaten_bima.masih_odp;
+		let kab_pdp = kabupaten_bima.masih_pdp;
+		let kab_positif = kabupaten_bima.sembuh + kabupaten_bima.dirawat;
+
+		$('#update').append('*Update terakhir pada tanggal <strong>'+tanggal+' '+bulan+' '+tahun+' Pukul '+jam+' WITA</strong>')
+		$('#daftar-menu').append(`
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<img src="img/kota_bima.png" class="card-img-top" width="80">
+					<div class="card-body">
+						<h2 class="card-title text-center"><strong>Kota Bima</strong></h2>
+						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+positif+`</strong></p>
+						<p class="card-text">ODP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+odp+`</strong></p>
+						<p class="card-text">PDP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+pdp+`</strong></p>
+						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dirawat+`</strong></p>
+						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+sembuh+`</strong></p>
+						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+meninggal+`</strong></p>
+					</div>
+				</div>
+			</div>`);
+
+		$('#daftar-menu').append(`
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<img src="img/kab_bima.png" class="card-img-top" width="80">
+					<div class="card-body">
+						<h2 class="card-title text-center"><br><br><strong>Kabupaten Bima</strong></h2>
+						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+kab_positif+`</strong></p>
+						<p class="card-text">ODP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_odp+`</strong></p>
+						<p class="card-text">PDP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_pdp+`</strong></p>
+						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_dirawat+`</strong></p>
+						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_sembuh+`</strong></p>
+						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+kab_meninggal+`</strong></p>
+					</div>
+				</div>
+			</div>`);
+		
+		$('#daftar-menu').append(`
+			<div class="col-md-4">
+				<div class="card mb-4">
+					<img src="img/dompu.png" class="card-img-top" width="80">
+					<div class="card-body">
+						<h2 class="card-title text-center"><strong>Kabupaten Dompu</strong></h2>
+						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+positif+`</strong></p>
+						<p class="card-text">ODP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+odp+`</strong></p>
+						<p class="card-text">PDP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+pdp+`</strong></p>
+						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dirawat+`</strong></p>
+						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+sembuh+`</strong></p>
+						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+meninggal+`</strong></p>
+					</div>
+				</div>
+			</div>`);
 		// console.log(menu);
-	// });
+		// });
+		// console.log(menu);
+	});
 }
 
-tampilkanSemuaMenu();
-
-
-// $('.nav-link').on('click', function() {
-// 	$('.nav-link').removeClass('active');
-// 	$(this).addClass('active');
-
-// 	let kategori = $(this).html();
-// 	$('h1').html(kategori);
-
-// 	if(kategori == 'All Menu') {
-// 		tampilkanSemuaMenu();
-// 		return;
-// 	}
-
-// 	$.getJSON('data/pizza.json', function(data) {
-// 		let menu = data.menu;
-// 		let content = '';
-
-// 		$.each(menu, function(i, data) {
-// 		let harga = data.harga
-// 		var	reverse = harga.toString().split('').reverse().join(''),
-// 			ribuan 	= reverse.match(/\d{1,3}/g);
-// 			ribuan	= ribuan.join('.').split('').reverse().join('');
-
-// 			if(data.kategori == kategori.toLowerCase()) {
-// 				content += '<div class="col-md-4"><div class="card mb-4"><img src="img/menu/' + data.gambar + '" class="card-img-top"><div class="card-body"><h5 class="card-title">' + data.nama + '</h5><p class="card-text">' + data.deskripsi + '</p><h5 class="card-title">Rp. ' + ribuan + '</h5><a href="#" class="btn btn-primary">Pesan Sekarang</a></div></div></div>';
-// 			}
-// 		});
-
-// 		$('#daftar-menu').html(content);
-// 	});
-// });
+tampilkan();

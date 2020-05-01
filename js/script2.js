@@ -55,6 +55,7 @@ function tampilkan() {
 		let dom_positif = kabupaten_dompu.sembuh + kabupaten_dompu.dirawat;
 
 		$('#update').append('*Update terakhir pada tanggal <strong>'+tanggal+' '+bulan+' '+tahun+' Pukul '+jam+' WITA</strong>, Sumber : Dinas Kesehatan NTB')
+		$('#cop').append('Dibuat oleh <strong>&nbsp;Mpandi</strong>')
 		$('#tampil').append(`
 			<div class="col-md-4">
 				<div class="card mb-4">

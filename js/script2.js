@@ -1,4 +1,4 @@
-function tampilkan() {
+function tampilkanSemuaMenu() {
 
 	// $.ajax({
 	// 	url : 'https://corona.ntbprov.go.id/api/data',
@@ -35,6 +35,15 @@ function tampilkan() {
 		let kab_odp = kabupaten_bima.masih_odp;
 		let kab_pdp = kabupaten_bima.masih_pdp;
 		let kab_positif = kabupaten_bima.sembuh + kabupaten_bima.dirawat;
+
+		// Kabupaten Dompu
+		let kabupaten_dompu = data.data.kabupaten_dompu;
+		let dom_dirawat = kabupaten_dompu.dirawat;
+		let dom_sembuh = kabupaten_dompu.sembuh;
+		let dom_meninggal = kabupaten_dompu.meninggal;
+		let dom_odp = kabupaten_dompu.masih_odp;
+		let dom_pdp = kabupaten_dompu.masih_pdp;
+		let dom_positif = kabupaten_dompu.sembuh + kabupaten_dompu.dirawat;
 
 		$('#update').append('*Update terakhir pada tanggal <strong>'+tanggal+' '+bulan+' '+tahun+' Pukul '+jam+' WITA</strong>')
 		$('#daftar-menu').append(`
@@ -75,12 +84,12 @@ function tampilkan() {
 					<img src="img/dompu.png" class="card-img-top" width="80">
 					<div class="card-body">
 						<h2 class="card-title text-center"><strong>Kabupaten Dompu</strong></h2>
-						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+positif+`</strong></p>
-						<p class="card-text">ODP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+odp+`</strong></p>
-						<p class="card-text">PDP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+pdp+`</strong></p>
-						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dirawat+`</strong></p>
-						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+sembuh+`</strong></p>
-						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+meninggal+`</strong></p>
+						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+dom_positif+`</strong></p>
+						<p class="card-text">ODP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_odp+`</strong></p>
+						<p class="card-text">PDP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_pdp+`</strong></p>
+						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_dirawat+`</strong></p>
+						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_sembuh+`</strong></p>
+						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+dom_meninggal+`</strong></p>
 					</div>
 				</div>
 			</div>`);
@@ -90,4 +99,36 @@ function tampilkan() {
 	});
 }
 
-tampilkan();
+tampilkanSemuaMenu();
+
+
+// $('.nav-link').on('click', function() {
+// 	$('.nav-link').removeClass('active');
+// 	$(this).addClass('active');
+
+// 	let kategori = $(this).html();
+// 	$('h1').html(kategori);
+
+// 	if(kategori == 'All Menu') {
+// 		tampilkanSemuaMenu();
+// 		return;
+// 	}
+
+// 	$.getJSON('data/pizza.json', function(data) {
+// 		let menu = data.menu;
+// 		let content = '';
+
+// 		$.each(menu, function(i, data) {
+// 		let harga = data.harga
+// 		var	reverse = harga.toString().split('').reverse().join(''),
+// 			ribuan 	= reverse.match(/\d{1,3}/g);
+// 			ribuan	= ribuan.join('.').split('').reverse().join('');
+
+// 			if(data.kategori == kategori.toLowerCase()) {
+// 				content += '<div class="col-md-4"><div class="card mb-4"><img src="img/menu/' + data.gambar + '" class="card-img-top"><div class="card-body"><h5 class="card-title">' + data.nama + '</h5><p class="card-text">' + data.deskripsi + '</p><h5 class="card-title">Rp. ' + ribuan + '</h5><a href="#" class="btn btn-primary">Pesan Sekarang</a></div></div></div>';
+// 			}
+// 		});
+
+// 		$('#daftar-menu').html(content);
+// 	});
+// });

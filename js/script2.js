@@ -128,7 +128,7 @@ function tampilkan() {
 						<h2 class="card-title text-center"><strong>NTB</strong></h2>
 						<p class="card-text">Dirawat : &nbsp;&nbsp;<strong>`+ntb_dirawat+`</strong></p>
 						<p class="card-text">Sembuh : &nbsp;&nbsp;<strong>`+ntb_sembuh+`</strong></p>
-						<p class="card-text">Meninggal : &nbsp;&nbsp;<strong>`+ntb_meninggal+`</strong></p>
+						<p class="card-text" style="color: red">Meninggal : &nbsp;&nbsp;<strong>`+ntb_meninggal+`</strong></p>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+ntb_positif+`</strong></p>
 						<p class="card-text">Total (PPTG+OTG+ODP+PDP) : &nbsp;&nbsp;<strong>`+ntb_keseluruhan+`</strong></p>
 					</div>

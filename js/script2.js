@@ -30,7 +30,7 @@ function tampilkan() {
 		let meninggal = kota_bima.meninggal;
 		let odp = kota_bima.masih_odp;
 		let pdp = kota_bima.masih_pdp;
-		let positif = kota_bima.sembuh + kota_bima.dirawat;
+		let positif = kota_bima.sembuh + kota_bima.dirawat + kota_bima.meninggal;
 
 		// Kabupaten Bima
 		let kabupaten_bima = data.data.kabupaten_bima;
@@ -41,7 +41,7 @@ function tampilkan() {
 		let kab_meninggal = kabupaten_bima.meninggal;
 		let kab_odp = kabupaten_bima.masih_odp;
 		let kab_pdp = kabupaten_bima.masih_pdp;
-		let kab_positif = kabupaten_bima.sembuh + kabupaten_bima.dirawat;
+		let kab_positif = kabupaten_bima.sembuh + kabupaten_bima.dirawat + kabupaten_bima.meninggal;
 
 		// Kabupaten Dompu
 		let kabupaten_dompu = data.data.kabupaten_dompu;
@@ -52,7 +52,7 @@ function tampilkan() {
 		let dom_meninggal = kabupaten_dompu.meninggal;
 		let dom_odp = kabupaten_dompu.masih_odp;
 		let dom_pdp = kabupaten_dompu.masih_pdp;
-		let dom_positif = kabupaten_dompu.sembuh + kabupaten_dompu.dirawat;
+		let dom_positif = kabupaten_dompu.sembuh + kabupaten_dompu.dirawat + kabupaten_dompu.meninggal;
 
 		$('#update').append('*Update terakhir pada tanggal <strong>'+tanggal+' '+bulan+' '+tahun+' Pukul '+jam+' WITA</strong>, Sumber : Dinas Kesehatan NTB')
 		$('#cop').append('Dibuat oleh <strong>&nbsp;Mpandi</strong>')

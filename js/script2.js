@@ -223,12 +223,13 @@ $('#tampil').on('click','.detail', function(){
 			<div class="container-fluid">
 				<div class="row">
 					<div class="col-md-4 text-center">
-						<img src="`+gam+`" height="150">
+						<img src="`+gam+`" height="200">
 					</div>
 
 					<div class="col-md-8">
 						
 						<p class="text-center"><strong>`+kota+`</strong></p>
+						<center>
 						<table>
 							<tr>
 								<td>
@@ -237,8 +238,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+positif+`</strong>
+								</td>
 								<td>
-									<strong>`+positif+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -248,8 +252,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+pptg+`</strong>
+								</td>
 								<td>
-									<strong>`+pptg+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -259,8 +266,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+selesai_pptg+`</strong>
+								</td>
 								<td>
-									<strong>`+selesai_pptg+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -270,8 +280,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+otg+`</strong>
+								</td>
 								<td>
-									<strong>`+otg+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -281,8 +294,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+selesai_otg+`</strong>
+								</td>
 								<td>
-									<strong>`+selesai_otg+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -292,8 +308,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+odp+`</strong>
+								</td>
 								<td>
-									<strong>`+odp+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -303,8 +322,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+selesai_odp+`</strong>
+								</td>
 								<td>
-									<strong>`+selesai_odp+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -314,8 +336,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+pdp+`</strong>
+								</td>
 								<td>
-									<strong>`+pdp+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -325,8 +350,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+selesai_pdp+`</strong>
+								</td>
 								<td>
-									<strong>`+selesai_pdp+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -336,8 +364,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+dirawat+`</strong>
+								</td>
 								<td>
-									<strong>`+dirawat+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr>
@@ -347,8 +378,11 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+sembuh+`</strong>
+								</td>
 								<td>
-									<strong>`+sembuh+`</strong> orang
+									orang
 								</td>
 							</tr>
 							<tr style="color: red">
@@ -358,11 +392,15 @@ $('#tampil').on('click','.detail', function(){
 								<td>
 									:
 								</td>
+								<td class="text-center">
+									<strong>`+meninggal+`</strong>
+								</td>
 								<td>
-									<strong>`+meninggal+`</strong> orang
+									orang
 								</td>
 							</tr>
-						</table						
+						</table>
+						</center>					
 					</div>
 				</div>
 			</div>

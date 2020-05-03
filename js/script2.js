@@ -64,7 +64,7 @@ function tampilkan() {
 						<h2 class="card-title text-center"><strong>Kota Bima</strong></h2>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+positif+`</strong></p>
 						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dirawat+`</strong></p>
-						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+sembuh+`</strong></p>
+						<p class="card-text" style="color: green">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+sembuh+`</strong></p>
 						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+meninggal+`</strong></p>
 						<a href="#" class="btn btn-primary detail" data-toggle="modal" data-target="#exampleModal" data-id="kota_bima">Detail</a>
 					</div>
@@ -79,7 +79,7 @@ function tampilkan() {
 						<h2 class="card-title text-center"><br><br><strong>Kabupaten Bima</strong></h2>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+kab_positif+`</strong></p>
 						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_dirawat+`</strong></p>
-						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_sembuh+`</strong></p>
+						<p class="card-text" style="color: green">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+kab_sembuh+`</strong></p>
 						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+kab_meninggal+`</strong></p>
 						<a href="#" class="btn btn-primary detail" data-toggle="modal" data-target="#exampleModal" data-id="kabupaten_bima">Detail</a>
 					</div>
@@ -94,7 +94,7 @@ function tampilkan() {
 						<h2 class="card-title text-center"><strong>Kabupaten Dompu</strong></h2>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+dom_positif+`</strong></p>
 						<p class="card-text">Dirawat &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_dirawat+`</strong></p>
-						<p class="card-text">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_sembuh+`</strong></p>
+						<p class="card-text" style="color: green">Sembuh &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: &nbsp;&nbsp;<strong>`+dom_sembuh+`</strong></p>
 						<p class="card-text" style="color: red">Meninggal &nbsp;: &nbsp;&nbsp;<strong>`+dom_meninggal+`</strong></p>
 						<a href="#" class="btn btn-primary detail" data-toggle="modal" data-target="#exampleModal" data-id="kabupaten_dompu">Detail</a>
 					</div>
@@ -119,7 +119,7 @@ function tampilkan() {
 						<h2 class="card-title text-center"><strong>NTB</strong></h2>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+ntb_positif+`</strong></p>
 						<p class="card-text">Dirawat : &nbsp;&nbsp;<strong>`+ntb_dirawat+`</strong></p>
-						<p class="card-text">Sembuh : &nbsp;&nbsp;<strong>`+ntb_sembuh+`</strong></p>
+						<p class="card-text" style="color: green">Sembuh : &nbsp;&nbsp;<strong>`+ntb_sembuh+`</strong></p>
 						<p class="card-text" style="color: red">Meninggal : &nbsp;&nbsp;<strong>`+ntb_meninggal+`</strong></p>
 						<p class="card-text">Total (PPTG+OTG+ODP+PDP) : &nbsp;&nbsp;<strong>`+ntb_keseluruhan+`</strong></p>
 						<a href="#" class="btn btn-primary detail" data-toggle="modal" data-target="#exampleModal" data-id="ntb">Detail</a>
@@ -231,174 +231,18 @@ $('#tampil').on('click','.detail', function(){
 						<p class="text-center"><strong>`+kota+`</strong></p>
 						<center>
 						<table>
-							<tr>
-								<td>
-									Total Positif
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+positif+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									PPTG (masih)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+pptg+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									PPTG (selesai)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+selesai_pptg+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									OTG (masih)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+otg+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									OTG (selesai)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+selesai_otg+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									ODP (masih)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+odp+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									ODP (selesai)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+selesai_odp+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									PDP (masih)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+pdp+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									PDP (selesai)
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+selesai_pdp+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Dirawat
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+dirawat+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr>
-								<td>
-									Sembuh
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+sembuh+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
-							<tr style="color: red">
-								<td>
-									Meninggal
-								</td>
-								<td>
-									:
-								</td>
-								<td class="text-center">
-									<strong>`+meninggal+`</strong>
-								</td>
-								<td>
-									orang
-								</td>
-							</tr>
+							<tr><td>Total Positif</td><td>:</td><td class="text-center"><strong>`+positif+`</strong></td><td>orang</td></tr>
+							<tr><td>PPTG (masih)</td><td>:</td><td class="text-center"><strong>`+pptg+`</strong></td><td>orang</td></tr>
+							<tr><td>PPTG (selesai)</td><td>:</td><td class="text-center"><strong>`+selesai_pptg+`</strong></td><td>orang</td></tr>
+							<tr><td>OTG (masih)</td><td>:</td><td class="text-center"><strong>`+otg+`</strong></td><td>orang</td></tr>
+							<tr><td>OTG (selesai)</td><td>:</td><td class="text-center"><strong>`+selesai_otg+`</strong></td><td>orang</td></tr>
+							<tr><td>ODP (masih)</td><td>:</td><td class="text-center"><strong>`+odp+`</strong></td><td>orang</td></tr>
+							<tr><td>ODP (selesai)</td><td>:</td><td class="text-center"><strong>`+selesai_odp+`</strong></td><td>orang</td></tr>
+							<tr><td>PDP (masih)</td><td>:</td><td class="text-center"><strong>`+pdp+`</strong></td><td>orang</td></tr>
+							<tr><td>PDP (selesai)</td><td>:</td><td class="text-center"><strong>`+selesai_pdp+`</strong></td><td>orang</td></tr>
+							<tr><td>Dirawat</td><td>:</td><td class="text-center"><strong>`+dirawat+`</strong></td><td>orang</td></tr>
+							<tr style="color: green"><td>Sembuh</td><td>:</td><td class="text-center"><strong>`+sembuh+`</strong></td><td>orang</td></tr>
+							<tr style="color: red"><td>Meninggal</td><td>:</td><td class="text-center"><strong>`+meninggal+`</strong></td><td>orang</td></tr>
 						</table>
 						</center>					
 					</div>

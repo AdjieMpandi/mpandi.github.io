@@ -1,3 +1,11 @@
+function ribuan (data){
+	var	reverse = data.toString().split('').reverse().join(''),
+		ribuan 	= reverse.match(/\d{1,3}/g);
+		ribuan	= ribuan.join('.').split('').reverse().join('');
+	return ribuan;
+}
+			
+
 function tampilkan() {
 
 	$.getJSON('https://corona.ntbprov.go.id/api/data', function(data) {
@@ -18,7 +26,7 @@ function tampilkan() {
   		let ntb_dirawat = data.total_dirawat;
   		let ntb_sembuh = data.total_sembuh;
   		let ntb_meninggal = data.total_meninggal;
-  		let ntb_keseluruhan = data.total_keseluruhan;
+  		let ntb_keseluruhan = ribuan(data.total_keseluruhan);
   		let ntb_positif = data.total_positif;
 
 		// Kota Bima
@@ -100,17 +108,32 @@ function tampilkan() {
 					</div>
 				</div>
 			</div>`);
+
+
+		$.getJSON('https://covid19.mathdro.id/api/countries/ID', function(indonesia) {
+			var i_confirm = ribuan(indonesia.confirmed.value);
+			var i_recovered = ribuan(indonesia.recovered.value);
+			var i_deaths = ribuan(indonesia.deaths.value);
+
+			$.getJSON('https://covid19.mathdro.id/api', function(dunia) {
+			var d_confirm = ribuan(dunia.confirmed.value);
+			var d_recovered = ribuan(dunia.recovered.value);
+			var d_deaths = ribuan(dunia.deaths.value);
 		
 		$('#tampil').append(`
 			<div class="col-md-4">
 				<div class="card mb-4">
 					<div class="card-body">
-						<h2 class="card-title text-center"><strong>NTB</strong></h2>
-						<p class="card-text">PPTG : &nbsp;&nbsp;<strong>`+ntb_pptg+`</strong></p>
-						<p class="card-text">OTG &nbsp;: &nbsp;&nbsp;<strong>`+ntb_otg+`</strong></p>
+						<h2 class="card-title text-center"><strong>Indonesia</strong></h2>
+						<table>
+						<tr class="card-text"><td>Total Positif</td><td>:</td><td><strong>`+i_confirm+`</strong></td>
+						<tr class="card-text" style="color: green"><td>Total Sembuh</td><td>:</td><td><strong>`+i_recovered+`</strong></td></tr>
+						<tr class="card-text" style="color: red"><td>Total Meninggal</td><td>:</td><td><strong>`+i_deaths+`</strong></td></tr>
+						</table>
 					</div>
 				</div>
 			</div>`);
+
 		
 		$('#tampil').append(`
 			<div class="col-md-4">
@@ -126,17 +149,25 @@ function tampilkan() {
 					</div>
 				</div>
 			</div>`);
+
+		
 		
 		$('#tampil').append(`
 			<div class="col-md-4">
 				<div class="card mb-4">
 					<div class="card-body">
-						<h2 class="card-title text-center"><strong>NTB</strong></h2>
-						<p class="card-text">ODP : &nbsp;&nbsp;<strong>`+ntb_odp+`</strong></p>
-						<p class="card-text">PDP &nbsp;: &nbsp;&nbsp;<strong>`+ntb_pdp+`</strong></p>
+						<h2 class="card-title text-center"><strong>Dunia</strong></h2>
+						<table>
+						<tr class="card-text"><td style="margin-bottom: 100px">Total Positif</td><td>:</td><td><strong>`+d_confirm+`</strong></td>
+						<tr class="card-text" style="color: green"><td>Total Sembuh</td><td>:</td><td><strong>`+d_recovered+`</strong></td></tr>
+						<tr class="card-text" style="color: red"><td>Total Meninggal</td><td>:</td><td><strong>`+d_deaths+`</strong></td></tr>
+						</table>
 					</div>
 				</div>
 			</div>`);
+
+		});
+		});
 	});
 }
 
@@ -149,14 +180,14 @@ $('#tampil').on('click','.detail', function(){
 		switch(kom) {
 		  	case 'kota_bima':
 		    var kota_bima = data.data.kota_bima;
-			var pptg = kota_bima.masih_pptg;
-			var selesai_pptg = kota_bima.selesai_pptg;
-			var otg = kota_bima.masih_otg;
-			var selesai_otg = kota_bima.selesai_otg;
-			var odp = kota_bima.masih_odp;
-			var selesai_odp = kota_bima.selesai_odp;
-			var pdp = kota_bima.masih_pdp;
-			var selesai_pdp = kota_bima.selesai_pdp;
+			var pptg = ribuan(kota_bima.masih_pptg);
+			var selesai_pptg = ribuan(kota_bima.selesai_pptg);
+			var otg = ribuan(kota_bima.masih_otg);
+			var selesai_otg = ribuan(kota_bima.selesai_otg);
+			var odp = ribuan(kota_bima.masih_odp);
+			var selesai_odp = ribuan(kota_bima.selesai_odp);
+			var pdp = ribuan(kota_bima.masih_pdp);
+			var selesai_pdp = ribuan(kota_bima.selesai_pdp);
 			var dirawat = kota_bima.dirawat;
 			var sembuh = kota_bima.sembuh;
 			var meninggal = kota_bima.meninggal;
@@ -166,14 +197,14 @@ $('#tampil').on('click','.detail', function(){
 		    break;
 		  	case 'kabupaten_bima':
 		    var kabupaten_bima = data.data.kabupaten_bima;
-			var pptg = kabupaten_bima.masih_pptg;
-			var selesai_pptg = kabupaten_bima.selesai_pptg;
-			var otg = kabupaten_bima.masih_otg;
-			var selesai_otg = kabupaten_bima.selesai_otg;
-			var odp = kabupaten_bima.masih_odp;
-			var selesai_odp = kabupaten_bima.selesai_odp;
-			var pdp = kabupaten_bima.masih_pdp;
-			var selesai_pdp = kabupaten_bima.selesai_pdp;
+			var pptg = ribuan(kabupaten_bima.masih_pptg);
+			var selesai_pptg = ribuan(kabupaten_bima.selesai_pptg);
+			var otg = ribuan(kabupaten_bima.masih_otg);
+			var selesai_otg = ribuan(kabupaten_bima.selesai_otg);
+			var odp = ribuan(kabupaten_bima.masih_odp);
+			var selesai_odp = ribuan(kabupaten_bima.selesai_odp);
+			var pdp = ribuan(kabupaten_bima.masih_pdp);
+			var selesai_pdp = ribuan(kabupaten_bima.selesai_pdp);
 			var dirawat = kabupaten_bima.dirawat;
 			var sembuh = kabupaten_bima.sembuh;
 			var meninggal = kabupaten_bima.meninggal;
@@ -183,14 +214,14 @@ $('#tampil').on('click','.detail', function(){
 		    break;
 		  	case 'kabupaten_dompu':
 		    var kabupaten_dompu = data.data.kabupaten_dompu;
-			var pptg = kabupaten_dompu.masih_pptg;
-			var selesai_pptg = kabupaten_dompu.selesai_pptg;
-			var otg = kabupaten_dompu.masih_otg;
-			var selesai_otg = kabupaten_dompu.selesai_otg;
-			var odp = kabupaten_dompu.masih_odp;
-			var selesai_odp = kabupaten_dompu.selesai_odp;
-			var pdp = kabupaten_dompu.masih_pdp;
-			var selesai_pdp = kabupaten_dompu.selesai_pdp;
+			var pptg = ribuan(kabupaten_dompu.masih_pptg);
+			var selesai_pptg = ribuan(kabupaten_dompu.selesai_pptg);
+			var otg = ribuan(kabupaten_dompu.masih_otg);
+			var selesai_otg = ribuan(kabupaten_dompu.selesai_otg);
+			var odp = ribuan(kabupaten_dompu.masih_odp);
+			var selesai_odp = ribuan(kabupaten_dompu.selesai_odp);
+			var pdp = ribuan(kabupaten_dompu.masih_pdp);
+			var selesai_pdp = ribuan(kabupaten_dompu.selesai_pdp);
 			var dirawat = kabupaten_dompu.dirawat;
 			var sembuh = kabupaten_dompu.sembuh;
 			var meninggal = kabupaten_dompu.meninggal;
@@ -199,25 +230,24 @@ $('#tampil').on('click','.detail', function(){
 			var gam = 'img/dompu.png';
 		    break;
 		  	case 'ntb':
-		    var pptg = data.total_masih_pptg;
-		    var selesai_pptg = data.total_selesai_pptg;
-	  		var otg = data.total_masih_otg;
-	  		var selesai_otg = data.total_selesai_otg;
-	  		var odp = data.total_masih_odp;
-	  		var selesai_odp = data.total_selesai_odp;
+		    var pptg = ribuan(data.total_masih_pptg);
+		    var selesai_pptg = ribuan(data.total_selesai_pptg);
+	  		var otg = ribuan(data.total_masih_otg);
+	  		var selesai_otg = ribuan(data.total_selesai_otg);
+	  		var odp = ribuan(data.total_masih_odp);
+	  		var selesai_odp = ribuan(data.total_selesai_odp);
 	  		var pdp = data.total_masih_pdp;
 	  		var selesai_pdp = data.total_selesai_pdp;
 	  		var dirawat = data.total_dirawat;
 	  		var sembuh = data.total_sembuh;
 	  		var meninggal = data.total_meninggal;
-	  		var ntb_keseluruhan = data.total_keseluruhan;
+	  		// var ntb_keseluruhan = data.total_keseluruhan;
 	  		var positif = data.total_positif;
 			var kota = 'Nusa Tenggara Barat';
 			var gam = 'img/ntb.png';
 		    break;
 		  	default:
 		}
-			console.log(data);
 
 		$('.modal-body').html(`
 			<div class="container-fluid">

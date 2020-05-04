@@ -140,12 +140,14 @@ function tampilkan() {
 				<div class="card mb-4">
 					<div class="card-body">
 						<h2 class="card-title text-center"><strong>NTB</strong></h2>
-						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+ntb_positif+`</strong></p>
-						<p class="card-text">Dirawat : &nbsp;&nbsp;<strong>`+ntb_dirawat+`</strong></p>
-						<p class="card-text" style="color: green">Sembuh : &nbsp;&nbsp;<strong>`+ntb_sembuh+`</strong></p>
-						<p class="card-text" style="color: red">Meninggal : &nbsp;&nbsp;<strong>`+ntb_meninggal+`</strong></p>
-						<p class="card-text">Total (PPTG+OTG+ODP+PDP) : &nbsp;&nbsp;<strong>`+ntb_keseluruhan+`</strong></p>
-						<a href="#" class="btn btn-primary detail" data-toggle="modal" data-target="#exampleModal" data-id="ntb">Detail</a>
+						<table>
+						<tr class="card-text"><td>Total Positif</td><td>:</td><td><strong>`+ntb_positif+`</strong></td></tr>
+						<tr class="card-text"><td>Dirawat</td><td>:</td><td><strong>`+ntb_dirawat+`</strong></td><tr>
+						<tr class="card-text" style="color: green"><td>Sembuh</td><td>:</td><td><strong>`+ntb_sembuh+`</strong></td></tr>
+						<tr class="card-text" style="color: red"><td>Meninggal</td><td>:</td><td><strong>`+ntb_meninggal+`</strong></td></tr>
+						<tr><td class="card-text">Total (PPTG+OTG+ODP+PDP)</td><td>:</td><td><strong>`+ntb_keseluruhan+`</strong></td></tr>
+						<tr><td><a href="#" class="btn btn-primary detail" data-toggle="modal" data-target="#exampleModal" data-id="ntb">Detail</a></td></tr>
+						</table>
 					</div>
 				</div>
 			</div>`);

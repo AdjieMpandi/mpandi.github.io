@@ -55,7 +55,7 @@ function tampilkan() {
 		let dom_positif = kabupaten_dompu.sembuh + kabupaten_dompu.dirawat + kabupaten_dompu.meninggal;
 
 		$('#update').append('*Update terakhir pada tanggal <strong>'+tanggal+' '+bulan+' '+tahun+' Pukul '+jam+' WITA</strong>, Sumber : Dinas Kesehatan NTB')
-		$('#cop').append('With &#x2764; by <strong><a href="https://www.instagram.com/adjiempandi/" style="text-decoration: none; color: black;">Mpandi</strong></a>')
+		$('#cop').append('With &#x2764; by <strong><a href="https://www.instagram.com/adjiempandi/" style="text-decoration: none; color: black;" target="_blink">Mpandi</strong></a>')
 		$('#tampil').append(`
 			<div class="col-md-4">
 				<div class="card mb-4">

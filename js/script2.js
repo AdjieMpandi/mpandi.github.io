@@ -82,7 +82,7 @@ function tampilkan() {
 		$('#tampil').append(`
 			<div class="col-md-4">
 				<div class="card mb-4">
-					<img src="img/kab_bima.png" class="card-img-top" width="80">
+					<img src="img/kabupaten_bima.png" class="card-img-top" width="80">
 					<div class="card-body">
 						<h2 class="card-title text-center"><br><br><strong>Kabupaten Bima</strong></h2>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+kab_positif+`</strong></p>
@@ -97,7 +97,7 @@ function tampilkan() {
 		$('#tampil').append(`
 			<div class="col-md-4">
 				<div class="card mb-4">
-					<img src="img/dompu.png" class="card-img-top" height="485">
+					<img src="img/kabupaten_dompu.png" class="card-img-top" height="485">
 					<div class="card-body">
 						<h2 class="card-title text-center"><strong>Kabupaten Dompu</strong></h2>
 						<p class="card-text">Total Positif : &nbsp;&nbsp;<strong>`+dom_positif+`</strong></p>
@@ -212,7 +212,7 @@ $('#tampil').on('click','.detail', function(){
 			var meninggal = kabupaten_bima.meninggal;
 			var positif = kabupaten_bima.sembuh + kabupaten_bima.dirawat + kabupaten_bima.meninggal;
 			var kota = 'Kabupaten Bima';
-			var gam = 'img/kab_bima.png';
+			var gam = 'img/kabupaten_bima.png';
 		    break;
 		  	case 'kabupaten_dompu':
 		    var kabupaten_dompu = data.data.kabupaten_dompu;
@@ -229,7 +229,7 @@ $('#tampil').on('click','.detail', function(){
 			var meninggal = kabupaten_dompu.meninggal;
 			var positif = kabupaten_dompu.sembuh + kabupaten_dompu.dirawat + kabupaten_dompu.meninggal;
 			var kota = 'Kabupaten Dompu';
-			var gam = 'img/dompu.png';
+			var gam = 'img/kabupaten_dompu.png';
 		    break;
 		  	case 'ntb':
 		    var pptg = ribuan(data.total_masih_pptg);
@@ -243,7 +243,6 @@ $('#tampil').on('click','.detail', function(){
 	  		var dirawat = data.total_dirawat;
 	  		var sembuh = data.total_sembuh;
 	  		var meninggal = data.total_meninggal;
-	  		// var ntb_keseluruhan = data.total_keseluruhan;
 	  		var positif = data.total_positif;
 			var kota = 'Nusa Tenggara Barat';
 			var gam = 'img/ntb.png';

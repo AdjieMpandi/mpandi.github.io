@@ -10,7 +10,7 @@ function tampilkan() {
 
 	$.getJSON('https://corona.ntbprov.go.id/api/data', function(data) {
 
-		var bulan = ['','Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']; 
+		var bulan = ['','Januarii', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember']; 
 		let update_terakhir = data.update_terakhir;
   		let tahun = update_terakhir.substr(0, 4);
   		let _bulan = update_terakhir.substr(6, 1);

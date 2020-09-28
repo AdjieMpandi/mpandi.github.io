@@ -1,73 +1,64 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Profil Card</title>
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script
+      src="http://kit.fontawesome.com/e25b852c87.js"
+      crossorigin="anonymous"
+    ></script>
 
-    <title>Data Covid19 Kota Bima</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Barlow:wght@400;500;700&display=swap"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
-
-  <div class="container">
-    
-    <div class="row mt-3">
-      <div class="col text-center">
-        <h1><b>Data Pantauan COVID-19 Di Kota Bima dan Sekitarnya</b></h1>
-        <p>Note :
-        Pelaku Perjalanan Tanpa Gejala (<strong>PPTG</strong>),
-        Orang Tanpa Gejala (<strong>OTG</strong>),
-        Orang Dalam Pemantauan (<strong>ODP</strong>),
-        Pasien Dalam Pengawasan (<strong>PDP</strong>)
-        </p>
-        <h6 id="update"></h6>
+    <div class="card">
+      <img src="img/poto.JPG" alt="poto propil" />
+      <h2 class="name">Muhadjir Fachrurradjie</h2>
+      <p class="about">
+        Holla!!! Saya Adjie lulusan Teknik Informatika (S1) di Universitas
+        Pembangunan Nasional "Veteran" Yogyakarta. Sekarang saya menetap di
+        Yogyakarta. Saya Web Developer dengan beberapa skill programming yang
+        saya pahami yaitu: CSS, PHP, MYSQL, JS serta framework Laravel dan CI.
+      </p>
+      <div class="btn-group">
+        <!-- <a href="#" class="btn">see my work</a> -->
+        <a href="#" class="btn connect"
+          >Connect
+          <!-- <i class="fas fa-chevron-down arrow"></i> -->
+        </a>
+      </div>
+      <div class="social-media-list">
+        <a
+          href="https://www.facebook.com/adjiempandi/"
+          target="blink"
+          class="social-media"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+        <a
+          href="https://www.instagram.com/adjiempandi/"
+          target="blink"
+          class="social-media"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a
+          href="https://api.whatsapp.com/send?phone=6282225608699"
+          target="blink"
+          class="social-media"
+        >
+          <i class="fab fa-whatsapp"></i>
+        </a>
       </div>
     </div>
 
-    <div class="row mt-5" id="tampil">
-
-    </div>
-
-    <div class="row mt-5 ">
-          <div class="col text-center">
-            <h6 id="cop"></h6>
-          </div>
-    </div>
-
-  </div>
-
-<!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Detail Data</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        Loading ...
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-      </div>
-    </div>
-  </div>
-</div>
-
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script
-        src="https://code.jquery.com/jquery-3.5.0.min.js"
-        integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ="
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
-    <script src="js/script2.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
